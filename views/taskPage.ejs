@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>任務包</title>
+
+  <link rel="stylesheet" href="taskPage.css">
+  <link rel="stylesheet" href="taskPage.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=B612+Mono:ital,wght@0,400;0,700;1,400;1,700&family=M+PLUS+Rounded+1c&family=Noto+Sans+TC:wght@100..900&family=ZCOOL+XiaoWei&family=Zen+Antique&family=Zen+Old+Mincho&display=swap" rel="stylesheet">
+
+
+  
+</head>
+<body>
+<!--<button id="testBTN">TEST</button>-->
+  <section class="section4">
+    <div>
+      <div class="calendarTitle">2025 年 2 月行事曆
+         <p>每日任務包完成結果</p>
+      </div>
+      <!-- 測試輸出 taskData -->
+      <!--
+      <pre><%= JSON.stringify(taskData, null, 2) %></pre>
+      -->
+    
+      <div class="calendarContainer">
+        <div class="calendar">
+          <% for (let day = 1; day <= 28; day++) { %>
+            <% 
+              // 格式化日期，例如 "2025-02-01"
+              const date = `2025-02-${String(day).padStart(2, '0')}`;
+              // 從 taskData 取得該日期的完成狀態
+              const isCompleted = taskData[date];
+            %>
+      
+            <!-- 行事曆格子 -->
+            <div class="day <%= isCompleted ? 'completed' : '' %>">
+              <%= day %> <!-- 顯示日期 -->
+            </div>
+          <% } %>
+        </div>
+     </div>
+    </div>
+
+  </section>
+
+
+
+  <div class="真的大背景">
+    <div class="大背景">
+      <div class="刺刺標籤" id="時間限制倒數顯示ID"></div>
+
+      <section class="sec1">
+        <div class="sec1_1">
+          <img id="圖像表示ID" src="https://i.pinimg.com/736x/a5/4b/d0/a54bd0a16993ebd26f163afaa37c34d3.jpg" >
+          <div class="sec1_1_li" id="當前狀態分數ID"></div>      
+          <div class="sec1_1_li" id="紅點全部沒了ID"></div>        
+          <div class="sec1_1_li" id="任務包完成情況ID">任務情況</div>
+        
+
+          
+        </div>
+      </section>
+
+  <audio src="/瑪莉歐-拉旗過關.mp4" id="任務完成音樂ID" preload="auto"></audio>
+
+
+
+
+      <section class="sec2">
+        任務指定完成時間
+          <div id="指定時間顯示ID"></div>
+    
+          <audio src="/瑪莉歐-死掉.mp4" id="時間到音樂ID" preload="auto"></audio>
+          
+
+
+        
+
+
+
+      </section>
+
+
+
+      <section class="sec3">
+        
+        <div class="sec3Container">
+          <div class="sec3a">
+
+            <div class="sec3_1Cube">
+              <span class="redDot" id="redDotID1"></span>
+
+              <div class="Task3_1">Task</div>
+              <div class="Num3_1">1</div>
+            </div>
+            <div class="sec3_1Cube">
+              <span class="redDot" id="redDotID2"></span>
+              <div class="Task3_1">Task</div>
+              <div class="Num3_1">2</div>
+            </div>
+            <div class="sec3_1Cube">
+              <span class="redDot" id="redDotID3"></span>
+              <div class="Task3_1">Task</div>
+              <div class="Num3_1">3</div>
+            </div>
+            <div class="sec3_1Cube">
+              <span class="redDot" id="redDotID4"></span>
+              <div class="Task3_1">Task</div>
+              <div class="Num3_1">4</div>
+            </div>
+            <div class="sec3_1Cube">
+              <span class="redDot" id="redDotID5"></span>
+              <div class="Task3_1">Task</div>
+              <div class="Num3_1">5</div>
+            </div>
+
+    
+          </div>
+
+          <div class="sec3_2">
+            <span class="starGrey" id="star1ID">★</span>
+            <span class="starGrey" id="star2ID">★</span>
+            <span class="starGrey" id="star3ID">★</span>
+            <span class="starGrey" id="star4ID">★</span>
+            <span class="starGrey" id="star5ID">★</span>
+
+          </div>
+
+          <div class="sec3_3Container">
+            <div class="sec3LongBox">
+              <div class="LongBoxA">
+                &nbsp;英文字彙
+              </div>
+              <div class="LongBoxB">
+                3 <br> mins
+                
+              </div>
+              <button class="任務完成btn" id="button1ID">GO</button> 
+              <li id="bug1狀態ID"></li>
+              
+            </div>
+          
+            <div class="sec3LongBox">
+              <div class="LongBoxA">
+                《邏輯的藝術》
+              </div>
+              <div class="LongBoxB">
+                10 <br> mins
+                
+              </div>
+              <button class="任務完成btn" id="button2ID">GO</button>  
+              <li id="bug2狀態ID"></li>
+            </div>
+
+            <div class="sec3LongBox">
+              <div class="LongBoxA">
+                《諮商心理應用》
+              </div>
+              <div class="LongBoxB">
+                10 <br> mins
+            
+              </div>
+              <button class="任務完成btn" id="button3ID">GO</button>  
+              <li id="bug3狀態ID"></li>
+            </div>
+
+            <div class="sec3LongBox">
+              <div class="LongBoxA">
+                &nbsp;寫作
+              </div>
+              <div class="LongBoxB">
+                10 <br> mins
+                
+              </div>
+              <button class="任務完成btn" id="button4ID">GO</button>  
+              <li id="bug4狀態ID"></li>
+            </div>
+
+            <div class="sec3LongBox">
+              <div class="LongBoxA">
+                &nbsp;讀經進度單
+              </div>
+              <div class="LongBoxB">
+                10 <br> mins
+                
+              </div>
+              <button class="任務完成btn" id="button5ID">GO</button>  
+              <li id="bug5狀態ID"></li>
+            </div>
+        <!--
+            <button id="button0ID" onclick="音樂啦()">。。。</button>
+            -->  
+
+
+          </div>
+
+        </div>
+
+        <div class="模態視窗版面容器" id="模態視窗版面容器ID1"> <!--這個是iframe連結頁面的出現背景-->
+          <div class="模態視窗真正版面區塊">  <!--這個才是真正的iframe適應大小-->
+            <span class="close-btn" onclick="關閉倒數計時器()">×</span>
+            <iframe src="/timer" width="100%" height="100%"></iframe>
+    
+    
+          </div>
+        </div>
+
+        <div class="模態視窗版面容器" id="模態視窗版面容器ID2"> <!--這個是iframe連結頁面的出現背景-->
+          <div class="模態視窗真正版面區塊">  <!--這個才是真正的iframe適應大小-->
+            <span class="close-btn" onclick="關閉倒數計時器()">×</span>
+            <iframe src="/readingTimer1" width="100%" height="100%"></iframe>
+    
+    
+          </div>
+        </div>
+    
+        <div class="模態視窗版面容器" id="模態視窗版面容器ID3"> <!--這個是iframe連結頁面的出現背景-->
+          <div class="模態視窗真正版面區塊">  <!--這個才是真正的iframe適應大小-->
+            <span class="close-btn" onclick="關閉倒數計時器()">×</span>
+            <iframe src="/readingTimer2" width="100%" height="100%"></iframe>
+    
+    
+          </div>
+        </div>
+
+        <div class="模態視窗版面容器" id="模態視窗版面容器ID4"> <!--這個是iframe連結頁面的出現背景-->
+          <div class="模態視窗真正版面區塊">  <!--這個才是真正的iframe適應大小-->
+            <span class="close-btn" onclick="關閉倒數計時器()">×</span>
+            <iframe src="/writing" width="100%" height="100%"></iframe>
+    
+    
+          </div>
+        </div>
+
+        <div class="模態視窗版面容器" id="模態視窗版面容器ID5"> <!--這個是iframe連結頁面的出現背景-->
+          <div class="模態視窗真正版面區塊">  <!--這個才是真正的iframe適應大小-->
+            <span class="close-btn" onclick="關閉倒數計時器()">×</span>
+            <iframe src="/BibleReading" width="100%" height="100%"></iframe>
+    
+    
+          </div>
+        </div>
+
+
+
+      
+          </div>
+        </div>
+
+      </section>
+      
+
+
+
+
+    </div>
+  </div>
+  <script src="任務包.js"></script>
+  
+</body>
+</html>

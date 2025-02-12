@@ -1,0 +1,432 @@
+.真的大背景{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+
+width: 100vw;
+
+  min-height: 750px;
+
+
+justify-content: center;
+}
+
+
+.大背景{
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  min-width: 450px;
+  max-width: 650px;
+  min-height: 700px;
+  max-height:700px;
+  /*background-color: grey;*/
+  padding: 15px;
+  margin-left: 70px;
+  margin-right: 70px;
+
+  background-color: #bfadf4;
+  justify-content: space-between;
+}
+
+.sec1{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 200px;
+  /*background-color: wheat;*/
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;  
+
+  margin-bottom: 15px;
+
+}
+
+.sec2{
+  display: flex;
+  flex-direction: column;
+
+ 
+
+  width: 100%;
+  height: 80px;
+
+  justify-content: center;
+  align-items: center;
+ 
+ 
+
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 400;
+  font-style: normal;
+
+  font-size: 25px;
+}
+
+#指定時間顯示ID{
+  font-size: 18px;
+}
+
+
+
+.sec1_1{
+  display: flex;
+  flex-direction: row;
+  width: 200px;
+  height: 200px;
+  /*background-color: rgb(206, 147, 39);*/
+
+}
+.sec1_1_li{
+  min-width: 40px;
+  min-height: 80px;
+  
+  writing-mode: vertical-rl; /* 直書，從右到左 */
+  text-orientation: upright; /* 保持文字直立 */
+}
+
+.sec1_1 > img{
+  object-fit: cover;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  border: solid;
+  border-color: white;
+  border-width: 3px;
+  margin: 10px;
+  margin-right: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.刺刺標籤 {
+  position: absolute; /* 使用絕對定位 */
+
+  width: 120px;
+  height: 120px;
+
+  top: 200px; /* 讓它浮在 .sec2 上方 */
+  left: -65px;
+  transform: translateX(-50%);
+
+  background-color: yellow;
+
+  border-radius: 50%; /* 圓角樣式 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* 添加陰影 */
+  
+  font-weight: bold;
+
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  transform: rotate(-15deg); /* 調整傾斜角度 */
+  z-index: 10; /* 確保它在最上層 */
+ 
+}
+
+
+
+#時間限制倒數顯示ID{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+
+}
+
+.sec3{
+  display: flex;
+  min-width: 200px;
+  max-width: 600px;
+  height: 800px;
+  /*background-color: wheat;*/
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;  
+
+
+}
+
+
+
+
+.sec3Container{
+  display: flex;
+  flex-direction: column;
+  /*background-color: grey;*/
+  width: 93%;
+  height: 90%;
+  align-items: center;
+
+
+}
+
+
+
+
+
+.sec3a{
+  display: flex;
+  flex-direction: row;
+  /*background-color: rgb(202, 225, 188);*/
+  width: 96%;
+  height: 70px;
+  margin-top: 15px;
+  justify-content: space-between;
+
+
+
+}
+
+.sec3_1Cube{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  background-color: rgb(135, 191, 233);
+  align-items: center;
+
+}
+
+/*
+.sec3_1Cube::before{
+  
+  content: "";
+  width: 15px;
+  height: 15px;
+  background-color: red;
+  margin-top: -20px;
+  border-radius: 50%;
+  border: solid;
+  border-width: 2px;
+  border-color: white;
+
+}
+*/
+
+.redDot{
+  display: flex;
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: red;
+  margin-top: -75px;
+  border-radius: 50%;
+  border: solid;
+  border-width: 2px;
+  border-color: white;
+
+}
+
+
+.Task3_1{
+  display: flex;
+  justify-content: center;
+
+
+
+}
+
+.Num3_1{
+  display: flex;
+  justify-content: center;
+  font-size: 22px;
+}
+
+
+
+.sec3_2{
+  display: flex;
+  flex-direction: row;
+  /*background-color: rgb(217, 188, 225);*/
+  width: 96%;
+  height: 40px;
+  margin-top: 15px;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+
+
+}
+.starGrey{
+
+  box-sizing: border-box;
+  padding: 10px 10px 10px 10px;
+  margin-left: 15px;
+  margin-right: 15px;
+ 
+  font-size: 18px;
+  color: grey
+
+}
+
+
+.sec3_3Container{
+  display: flex;
+  flex-direction: row;
+  /*background-color: rgb(217, 188, 225);*/
+  width: 96%;
+  height: 190px;
+  margin-top: 15px;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+
+
+}
+
+.sec3LongBox{
+  display: flex;
+  flex-direction: column;
+  /*background-color: rgb(135, 191, 233);*/
+  width: 70px;
+  height: 100%;
+  
+  justify-content: space-between;
+  align-items: center;
+  
+
+
+}
+
+.LongBoxA{
+  display: flex;
+  width: 100%;
+  height: 70%;
+  background-color: rgb(97, 127, 238);
+  justify-content: space-between;
+  align-items: center;
+
+  /* 啟用直行書寫 */
+  writing-mode: vertical-rl; /* 或 vertical-lr */
+  text-orientation: upright;
+
+  /* 文字樣式 */
+  font-size: 16px;
+  text-align: center; /* 文字置中 */
+  line-height: 2; /* 行距 */
+
+
+}
+
+.LongBoxB{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 30%;
+  background-color: rgb(28, 53, 144);
+
+  color: white;
+
+  text-align: center;
+
+
+}
+
+
+.任務完成btn{
+  width: 70px;
+  height: 30px;
+  
+
+  margin-top: 10px;
+}
+
+.模態視窗版面容器{
+
+  display: none; /* 初始為隱藏 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+ 
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  z-index: 200;
+  
+}
+
+
+.模態視窗真正版面區塊{
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 600px;
+  height: 500px; 
+  position: absolute;
+  z-index: 200;
+  
+}
+
+.close-btn{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+
+.calendarContainer{
+
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+
+}
+
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.day {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+.completed {
+  background-color: #ecf44b;
+  border-color: #ecf44b;
+}
+
+.calendarTitle{
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 400;
+  font-style: normal;
+
+  font-size: 18px;
+  text-align: center;
+
+}
+
+
+.section4{
+
+
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 30px;
+}

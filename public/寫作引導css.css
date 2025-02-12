@@ -1,0 +1,178 @@
+
+.全頁容器 {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* 全頁高度 */
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.A區塊{
+  
+  display: flex;
+  flex-direction: row;
+
+
+  background-color: rgb(174, 216, 247);
+  margin: 10px;
+  align-items: center;
+  width: 100%; /* 滿版寬度 */
+  max-width: 100%; /* 最大寬度限制 */
+  
+  
+
+}
+
+.圖片區塊_左 {
+
+  width: 200px; /* 使用百分比讓它隨容器變動 */
+  height: 140px; /* 可以調整高度 */
+ 
+  margin-bottom: 10px;
+  justify-content: center;
+  align-items: left;
+  
+}
+
+.圖片版塊_圓形容器{
+ 
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+
+}
+.大頭照圖片{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border-style: solid;
+ 
+}
+
+.AA區塊{
+  display: flex;
+  flex-direction: column;
+  
+  width: 100%;
+  height: 200px;
+  align-items: left;
+  justify-content: center;
+
+}
+
+
+
+.Aa區塊{
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  height: 130px;
+
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px;
+
+}
+.引導者文字版塊{
+  display: flex;
+  width: 70%;
+  height: 100px;
+ 
+  align-items: center;
+  justify-content: center;
+
+  
+}
+
+.引導者按鈕{
+  width: 100px;
+  height: 40px;
+  
+  
+}
+
+.引導者對話框{
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  height: 100%;
+
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px;
+
+  
+
+}
+
+
+.textarea{
+  display: none;
+  width: 250px;
+  height: 100px;
+  resize: vertical;
+
+}
+
+.使用者區塊按鈕{
+  display: none;
+  width: 100px;
+  height: 30px;
+  
+}
+
+
+
+.檢查具體性按鈕{
+  display: none;
+  width: 150px;
+  height: 50px;
+  margin: 5px;
+
+}
+
+.引導者按鈕版塊{
+  display: flex;
+  flex-direction: column;
+}
+
+.休息按鈕{
+  display: none;
+  width: 100px;
+  height: 30px;
+  margin: 5px;
+
+}
+
+.繼續按鈕{
+  display: none;
+  width: 100px;
+  height: 30px;
+  margin: 5px;
+
+}
+
+
+.完成退出區塊{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 60px;
+  margin: 5px;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.完成退出按鈕{
+
+  width: 70px;
+  height: 30px;
+  margin: 5px;
+  align-items: center;
+
+
+}

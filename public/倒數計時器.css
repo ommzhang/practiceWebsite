@@ -1,0 +1,170 @@
+
+.全背景{
+  background-color: #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  width: 500;
+  height: 500px;
+
+  align-items: center;
+  margin-top: -10px;
+}
+.大背景{
+  display: flex;
+  flex-direction: column;
+  width: 330px;
+  height: 450px;
+
+  border-radius: 45px;
+  background: #e0e0e0;
+  box-shadow:  30px 30px 50px #cccccc,
+              -20px -20px 50px #f4f4f4;
+
+  margin: 30px;
+  align-items: center;
+}
+
+.物件container{
+  flex: 1;
+  width: 300px;
+  height: 40px;
+ 
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+ 
+}
+
+.標題{
+  margin: 30px;
+  font-size: 30px;
+  
+  color: rgb(47, 114, 202);
+  
+
+}
+.計時區塊容器{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  
+  
+
+}
+
+.計時區塊{
+  display: flex;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  margin: 10px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+
+  color:rgb(47, 114, 202);
+  font-size: 22px;
+  border: none;
+
+  border-radius: 22px;
+  background: #e0e0e0;
+  box-shadow: inset 9px 9px 19px #c5c5c5,
+              inset -9px -9px 19px #fbfbfb;
+
+
+
+
+}
+
+.開始按鈕{
+  width: 120px;
+  height: 50px;
+  border: none;
+  font-size: 26px;
+  color:rgb(47, 114, 202);
+
+
+
+  border-radius: 15px;
+  background: #e0e0e0;
+  box-shadow:  6px 6px 10px #cccccc,
+              -6px -6px 10px #f4f4f4;
+
+  margin-top: -5px;
+}
+.圓形區塊容器{
+  margin: -40px;
+  display: flex;
+  flex-direction: row;
+}
+
+.圓形按鈕{
+  border: none;
+  margin: 10px;
+
+  width: 45px;
+  height: 45px;
+
+  background-color: rgb(47, 114, 202);
+
+  color:white;
+
+
+  border-radius: 50%;
+ 
+  box-shadow:   10px 10px 25px #adadad,
+               -10px -10px 25px #fcfcfc;
+
+}
+
+.完成與回前頁區塊{
+
+  display: flex;
+  flex-direction: row;
+  margin: -20px;
+  
+}
+
+.完成按鈕{
+  border: none;
+  margin: 10px;
+
+  width: 45px;
+  height: 45px;
+
+  background-color: white;
+
+  color:rgb(47, 114, 202);
+
+
+  border-radius: 25%;
+ 
+  box-shadow:  5px 5px 10px #cccccc,
+              -5px -5px 10px #f4f4f4;
+}
+
+.回前頁按鈕{
+  border: none;
+  margin: 10px;
+
+
+  width: 45px;
+  height: 45px;
+
+  background-color: white;
+  font-size: 14px;
+  color:rgb(47, 114, 202);
+
+
+  border-radius: 25%;
+ 
+  box-shadow:  5px 5px 10px #cccccc,
+              -5px -5px 10px #f4f4f4;
+}
+
+
+
+

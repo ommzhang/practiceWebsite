@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeuMorphic介面倒數</title>
+  <link rel="stylesheet" href="倒數計時器.css">
+
+
+
+</head>
+<body>
+  <div class="全背景">
+    <div class="大背景">
+
+      <div class="物件container">
+        <div class="標題" id="標題ID">讀經</div>
+        <audio id="start-sound" src="瑪莉歐-開始.mp3" preload="auto"></audio>
+        <audio id="end-sound" src="瑪莉歐-加命.mp4" preload="auto"></audio>
+      </div>
+
+      <div class="物件container">
+        <div class="計時區塊容器">
+          <input type="number" id="小時輸入ID" class="計時區塊" value="00">
+          <input type="number" id="分鐘輸入ID" class="計時區塊" value ="10">
+          <input type="number" id="秒數輸入ID" class="計時區塊" value="00">
+
+
+        </div>
+
+
+      </div>
+
+      <div class="物件container">
+        <div>
+          <button class="開始按鈕" id="開始按鈕ID" onclick="倒數計時()">開始</button>
+          
+        </div>
+
+
+
+      </div>
+
+
+
+      <div class="物件container">
+
+        <div class="圓形區塊容器">
+          <button class="圓形按鈕" id="歸零按鈕ID" onclick="歸零鍵()">歸零</button>
+          <button class="圓形按鈕" id="暫停按鈕ID" onclick="暫停鍵()">暫停</button>
+          <button class="圓形按鈕" id="重新按鈕ID" onclick="重新鍵()">重來</button>
+
+        </div>
+      </div>
+      
+      <div class="物件container">
+        <div class="完成與回前頁區塊">
+
+        </div>
+        <button class="完成按鈕" id="完成按鈕ID" onclick="完成鍵()">完成</button>
+        <button class="回前頁按鈕">back</button>
+
+        
+      </div>
+    </div>
+
+
+  </div>
+
+ 
+
+  <script>
+
+    let 全部秒數;
+    let interval;
+    let isPaused = false;
+  
+    let 重新鍵返回數值;
+
+    const startSound = document.getElementById('start-sound');
+    const endSound = document.getElementById('end-sound');  
+
+    function 倒數計時(){
+          startSound.play();
+    
+          let 小時輸入 = parseInt(document.getElementById('小時輸入ID').value) || 0;
+          let 分鐘輸入 = parseInt(document.getElementById('分鐘輸入ID').value) || 0;
+          let 秒數輸入 = parseInt(document.getElementById('秒數輸入ID').value) || 0;
+
+          全部秒數 = 小時輸入*3600 + 分鐘輸入*60 + 秒數輸入;
+          重新鍵返回數值 = {小時輸入, 分鐘輸入, 秒數輸入};
+
+          if (全部秒數 <= 0) {
+            alert("請輸入有效時間");
+            return;
+
+          }
+          document.getElementById('小時輸入ID').disabled = true;
+          document.getElementById('分鐘輸入ID').disabled = true;
+          document.getElementById('秒數輸入ID').disabled = true;
+
+          document.getElementById('開始按鈕ID').disabled = true;
+
+          interval = setInterval(顯示倒數時間, 1000);
+          
+    }
+          
+
+          
+
+          
+        
+      
+    function 顯示倒數時間(){ 
+
+      if (全部秒數==4){endSound.play();}
+      if (全部秒數<=0){
+            
+            clearInterval(interval);
+         
+            
+            
+
+            document.getElementById('小時輸入ID').disabled = false;
+            document.getElementById('分鐘輸入ID').disabled = false;
+            document.getElementById('秒數輸入ID').disabled = false;
+            document.getElementById('暫停按鈕ID').textContent = '暫停';
+            isPaused = false;
+        
+          }else{
+
+            全部秒數--;
+            let 顯示小時 = Math.floor(全部秒數 /3600);
+            let 顯示分鐘 = Math.floor((全部秒數%3600) / 60);
+            let 顯示秒數 = (全部秒數% 60);  
+
+            document.getElementById('小時輸入ID').value = String(顯示小時).padStart(2, '0');
+            document.getElementById('分鐘輸入ID').value = String(顯示分鐘).padStart(2, '0');
+            document.getElementById('秒數輸入ID').value = String(顯示秒數).padStart(2, '0');
+            
+            
+          }
+          
+        }
+      
+
+
+    function 暫停鍵() {
+      const 暫停按鈕 = document.getElementById('暫停按鈕ID');
+
+      if (isPaused) {
+        // 繼續倒數
+        interval = setInterval(顯示倒數時間, 1000);
+        暫停按鈕.textContent = '暫停';
+        isPaused = false;
+      } else {
+        // 暫停倒數
+        clearInterval(interval);
+        暫停按鈕.textContent = '繼續';
+        isPaused = true;
+      }
+    }
+
+    function 歸零鍵(){
+      clearInterval(interval);
+
+      document.getElementById('小時輸入ID').value='00';
+      document.getElementById('分鐘輸入ID').value='00';
+      document.getElementById('秒數輸入ID').value='00';
+
+      document.getElementById('小時輸入ID').disabled=false;
+      document.getElementById('分鐘輸入ID').disabled=false;
+      document.getElementById('秒數輸入ID').disabled=false;
+
+      isPaused=false;
+      暫停鍵.textContent="暫停";
+      全部秒數 = 0;
+
+      document.getElementById('開始按鈕ID').disabled = false;
+      
+
+    }
+
+  
+    function 重新鍵() {
+      clearInterval(interval);
+
+      // 回到最近一次輸入的初始值
+      document.getElementById('小時輸入ID').value = String(重新鍵返回數值.小時輸入).padStart(2, '0');
+      document.getElementById('分鐘輸入ID').value = String(重新鍵返回數值.分鐘輸入).padStart(2, '0');
+      document.getElementById('秒數輸入ID').value = String(重新鍵返回數值.秒數輸入).padStart(2, '0');
+
+      全部秒數 = 重新鍵返回數值.小時輸入 * 3600 + 重新鍵返回數值.分鐘輸入 * 60 + 重新鍵返回數值.秒數輸入;
+
+      
+
+      document.getElementById('小時輸入ID').disabled = false;
+      document.getElementById('分鐘輸入ID').disabled = false;
+      document.getElementById('秒數輸入ID').disabled = false;
+      document.getElementById('暫停按鈕ID').textContent = '暫停';
+      isPaused = false;
+      document.getElementById('開始按鈕ID').disabled = false;
+
+ 
+    }
+
+    function 完成鍵(){
+      歸零鍵();
+      window.parent.postMessage("完成任務5", "*");
+      window.parent.document.getElementById("button5ID").style.display = "none";
+      window.parent.document.getElementById("star5ID").style.color = "rgb(200, 247, 172)";
+
+      window.parent.document.getElementById("redDotID5").style.display = "none";
+
+      window.parent.關閉倒數計時器();
+
+
+    }
+
+    window.addEventListener("message", function (event) {
+      if (event.data && event.data.這是參數名稱) {
+        document.getElementById("標題ID").textContent = event.data.這是參數名稱;
+      }
+    });
+
+  </script>
+
+
+  
+</body>
+</html>

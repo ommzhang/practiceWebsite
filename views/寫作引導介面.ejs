@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="寫作引導css.css">
+
+
+ 
+ 
+
+</head>
+<body>
+
+  <div class="全頁容器">
+    <div class="A區塊">
+      <div class="圖片區塊_左">
+        <div class="圖片版塊_圓形容器">
+          <img class="大頭照圖片" src="https://i.pinimg.com/736x/b9/3c/0f/b93c0f4f43c236e00dd058c0276ecdc5.jpg" />
+        </div>
+      </div>
+
+      <div class="AA區塊">
+      
+        <div class="Aa區塊">
+          <div class="引導者文字版塊" id="roundNum顯示ID"></div>
+          <div class="引導者文字版塊" id="引導者文字版塊ID"></div>
+          <div class="引導者按鈕版塊">
+            <button class="引導者按鈕" id="引導者區按鈕ID"></button>
+            <button class="休息按鈕" id="休息按鈕ID"></button>
+            <button class="繼續按鈕" id="繼續按鈕ID"></button>
+
+          </div>
+        </div>
+
+        <div class="引導者對話框" id="引導者對話框ID">
+          <button class="檢查具體性按鈕" id="檢查具體性按鈕ID1"></button>
+          <button class="檢查具體性按鈕" id="檢查具體性按鈕ID2"></button>
+          <button class="檢查具體性按鈕" id="檢查具體性按鈕ID3"></button>
+        </div>
+     
+      </div>
+
+    </div>
+
+    <div class="A區塊">
+      <div class="圖片區塊_左">
+        <div class="圖片版塊_圓形容器">
+          <img class="大頭照圖片" src="https://i.pinimg.com/474x/1b/ce/b9/1bceb961984c2124f8b5d45fe1f4aba9.jpg" />
+        </div>
+      </div>
+
+      <div class="AA區塊">
+        <span class="Aa區塊">
+          <textarea class="textarea" id="textareaID" maxlength="300" placeholder="字數上限300字"></textarea>
+          <button class="使用者區塊按鈕" id="使用者區塊按鈕ID">確認</button>
+
+        </span>
+      </div>
+
+
+    </div>
+    <div class="完成退出區塊">
+      <button class="完成退出按鈕" id="完成退出ID">完成！</button>
+    </div>
+
+  </div>
+
+
+<script src="寫作引導小功能存放區.js"></script>
+  <script>
+    const roundNum顯示 = document.getElementById('roundNum顯示ID');
+
+    const 引導者對話文字 = document.getElementById('引導者文字版塊ID');
+    const 引導者按鈕 = document.getElementById('引導者區按鈕ID');
+    const 引導者對話框 =  document.getElementById('引導者對話框ID');
+    const textareaJS = document.getElementById('textareaID');
+    const 使用者區塊按鈕 = document.getElementById('使用者區塊按鈕ID');
+
+    const button1 = document.getElementById("檢查具體性按鈕ID1");
+    const button2 = document.getElementById("檢查具體性按鈕ID2");
+    const button3 = document.getElementById("檢查具體性按鈕ID3");
+
+    const 休息按鈕 = document.getElementById('休息按鈕ID');
+    const 繼續按鈕 = document.getElementById('繼續按鈕ID');
+    const 完成退出按鈕 = document.getElementById('完成退出ID');
+    
+
+    const 引導者提問語料庫 = ["來聊聊你看了什麼吧？", "看到了什麼重點？", "可以清楚說明你剛剛看到的內容意思嗎？"]
+    const 引導者提問語料庫隨機編號 = Math.floor(Math.random() * 引導者提問語料庫.length);
+
+
+    let roundNum = 0;
+    let 使用者按鈕第一次被按 = true;
+    let 引導按鈕第一次被按 = true;
+//第一round=============================
+
+//可以設置一個「開始」按鈕，這個是第一round的按鈕。比如說，給那個「準備好了」。
+//之後就關閉準備好了按鈕，然後用偽元素？
+引導者對話文字.innerHTML = "這是起始引導";
+引導者按鈕.innerHTML = "這是初始鍵";
+roundNum顯示.innerHTML = roundNum;
+
+
+
+function 寫作引導機制(){
+
+  if(roundNum <=1){
+    
+    開啟引導按鈕();
+    
+    引導者按鈕.addEventListener("click", 使用者input);
+    
+    使用者區塊按鈕.addEventListener("click", 開啟三按鈕);
+    
+
+  }else if(roundNum >=2){
+    
+    
+    //開啟休息按鈕();
+
+
+    引導者按鈕.addEventListener("click", 使用者input);
+    
+    使用者區塊按鈕.addEventListener("click", 開啟三按鈕);
+    休息按鈕.addEventListener("click", 休息鍵);
+    繼續按鈕.addEventListener("click", 繼續鍵);
+    三按鈕按下後的回應();
+    
+    
+
+  }
+
+
+
+
+
+}
+寫作引導機制();
+三按鈕按下後的回應();
+完成退出按鈕.addEventListener("click", 完成退出鍵);
+
+
+function 三按鈕按下後的回應(){
+  
+
+  if (roundNum <= 1){
+                    
+      button1.addEventListener('click', button1Click12);
+      button2.addEventListener('click', button2Click12); 
+      button3.addEventListener('click', button3Click12);
+  
+
+
+  }else if(roundNum >=2) {
+    button1.addEventListener('click', button1Click3);  
+    button2.addEventListener('click', button2Click3);    
+    button3.addEventListener('click', button3Click3);
+   
+
+  }
+
+}
+
+
+          
+    
+
+
+
+
+
+
+ 
+  </script>
+
+
+
+
+  
+</body>
+</html>
