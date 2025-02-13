@@ -213,8 +213,10 @@ object-fit: cover;
   flex-direction: column;
   display: flex;
   flex-direction: column;
-  height: 400px; /* 設置合適的高度 */
+  width:auto;
+  height: auto; /* 設置合適的高度 */
   margin-top:30px;
+  margin-bottom: 30px;
   background-color: rgb(252, 252, 252);
 }
 
@@ -227,10 +229,13 @@ object-fit: cover;
 
 .swiper{
   width: 100%;
+  
   padding: 50px 0;
 
 }
 
+
+/* 原本設定
 .swiper-slide {
   position: relative;
   width: 290px;
@@ -251,3 +256,35 @@ object-fit: cover;
 
 }
 
+
+*/
+
+
+.swiper-slide {
+  position: relative;
+  width: 290px;
+  height: auto;
+  border-radius: 14px;
+  /* 
+  
+  border: 1px solid rgba(177, 177,177, 0.41); 
+  
+  */
+
+}
+
+.swiper-slide img {
+  display: block;
+  width: 290px;
+  height: auto;
+
+}
+
+
+
+.壓版區塊{
+
+  height: 70px;
+  
+
+}

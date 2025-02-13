@@ -29,7 +29,7 @@ var swiper = new Swiper('.swiper', {
     stretch: 80,
     depth: 350,
     modifier: 1,
-    slideShadows: true,
+    slideShadows: false,
   },
   on: {
     click(event) {
